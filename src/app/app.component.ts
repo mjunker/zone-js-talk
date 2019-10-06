@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef, OnInit, NgZone } from '@angular/core';
-import { of, interval } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { of, Observable } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
+declare const Zone: any;
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   title = 'zone-js-talk';
-  someValue = 'some value';
+  currentZone$;
+
   constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}
 
-  get value() {
-    console.log('getting value');
-    return this.someValue;
-  }
-
   ngOnInit(): void {
-    interval(100).subscribe();
+    this.ngZone.runOutsideAngular(() => {
+      this.currentZone$ = new Observable(subscriber =>
+        subscriber.next(Zone.current.name)
+      );
+    });
   }
 }

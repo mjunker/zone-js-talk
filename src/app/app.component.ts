@@ -6,7 +6,7 @@ import { Component, NgZone } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'zone-js-talk';
+  title = 'NgZone';
 
   constructor(private ngZone: NgZone) {}
 }

@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     window.addEventListener(
       'mousedown',
       event => {
-        this.value = 'mouse clicked ' + event.x + '/' + event.y;
+        this.cd.detectChanges();
       },
       true
     );

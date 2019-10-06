@@ -1,6 +1,5 @@
-import { Component, ChangeDetectorRef, OnInit, NgZone } from '@angular/core';
-import { of, Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 declare const Zone: any;
 
 @Component({
@@ -9,7 +8,7 @@ declare const Zone: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'zone-js-talk';
+  title = 'Zone.js is broken with RxJS?';
   currentZone$;
 
   constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}

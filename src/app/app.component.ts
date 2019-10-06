@@ -10,15 +10,25 @@ declare const Zone: any;
 })
 export class AppComponent implements OnInit {
   title = 'zone-js-talk';
-  currentZone$;
+  value = 'initial value';
 
   constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.ngZone.runOutsideAngular(() => {
-      this.currentZone$ = new Observable(subscriber =>
-        subscriber.next(Zone.current.name)
-      );
-    });
+    window.addEventListener(
+      'mousemove',
+      event => {
+        this.value = event.x + '/' + event.y;
+      },
+      true
+    );
+
+    window.addEventListener(
+      'mousedown',
+      event => {
+        this.value = 'mouse clicked ' + event.x + '/' + event.y;
+      },
+      true
+    );
   }
 }

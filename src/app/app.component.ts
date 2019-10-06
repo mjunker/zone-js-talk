@@ -1,18 +1,23 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, NgZone } from '@angular/core';
+import { of, interval } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'zone-js-talk';
-  value = 'not yet clicked';
+  someValue = 'some value';
+  constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  get value() {
+    console.log('getting value');
+    return this.someValue;
+  }
 
-  updateValue() {
-    this.value = 'button was clicked';
-    this.changeDetectorRef.detectChanges();
+  ngOnInit(): void {
+    interval(100).subscribe();
   }
 }

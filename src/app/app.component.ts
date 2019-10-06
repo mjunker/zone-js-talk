@@ -1,6 +1,5 @@
 import { Component, ChangeDetectorRef, OnInit, NgZone } from '@angular/core';
-import { of, interval } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'zone-js-talk';
+  title = 'Performance?';
   someValue = 'some value';
+
   constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}
 
   get value() {
-    console.log('getting value');
+    console.log(this.someValue);
     return this.someValue;
   }
 

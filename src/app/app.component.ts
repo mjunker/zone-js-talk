@@ -9,7 +9,7 @@ declare const Zone: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'zone-js-talk';
+  title = 'How to use event blacklist';
   value = 'initial value';
 
   constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}

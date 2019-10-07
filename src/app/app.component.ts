@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}
 
   get value() {
-    console.log(this.someValue);
     return this.someValue;
   }
 

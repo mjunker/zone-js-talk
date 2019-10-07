@@ -6,7 +6,7 @@ declare const Zone: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'zone-js-talk';
+  title = 'Basics';
 
   constructor(private ngZone: NgZone) {}
 }

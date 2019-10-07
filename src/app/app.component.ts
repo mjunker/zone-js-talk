@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-
+declare const Zone: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

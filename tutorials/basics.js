@@ -1,2 +1,3 @@
 import 'zone.js/dist/zone';
-Zone.current.run(() => {});
+import 'zone.js/dist/task-tracking';
+Zone.current.name; // ?

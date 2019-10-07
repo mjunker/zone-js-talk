@@ -7,7 +7,6 @@ Zone.current
       console.log(error.stack);
     }
   })
-  // .fork(Zone.longStackTraceZoneSpec)
   .run(() => {
     setTimeout(() => {
       setTimeout(() => {
@@ -15,3 +14,5 @@ Zone.current
       }, 200);
     }, 100);
   });
+
+// .fork(Zone.longStackTraceZoneSpec)

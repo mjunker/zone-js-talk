@@ -9,7 +9,7 @@ declare const Zone: any;
 })
 export class AppComponent implements OnInit {
   title = 'Zone.js is broken with RxJS?';
-  currentZone$;
+  currentZone$: Observable<string>;
 
   constructor(private ngZone: NgZone, private cd: ChangeDetectorRef) {}
 

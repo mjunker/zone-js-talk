@@ -13,6 +13,5 @@ export class AppComponent {
 
   updateValue() {
     this.value = 'button was clicked';
-    this.changeDetectorRef.detectChanges();
   }
 }

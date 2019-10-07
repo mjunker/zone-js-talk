@@ -23,12 +23,6 @@ export class AppComponent implements OnInit {
       true
     );
 
-    window.addEventListener(
-      'mousedown',
-      event => {
-        this.cd.detectChanges();
-      },
-      true
-    );
+    window.addEventListener('mousedown', event => {}, true);
   }
 }

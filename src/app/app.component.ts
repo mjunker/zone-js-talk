@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef, OnInit, NgZone } from '@angular/core';
 import { interval } from 'rxjs';
+declare const Zone: any;
 
 @Component({
   selector: 'app-root',

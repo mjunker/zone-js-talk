@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'NgZone';
 
   constructor(private ngZone: NgZone) {
-    console.log('current zone:', Zone.current.name);
+    console.log('current zone:', Zone.current);
   }
 }
